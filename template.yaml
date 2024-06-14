@@ -38,6 +38,11 @@ Resources:
       WebsiteConfiguration:
         ErrorDocument: 'index.html'
         IndexDocument: 'index.html'
+      PublicAccessBlockConfiguration:
+        BlockPublicAcls: false
+        IgnorePublicAcls: false
+        BlockPublicPolicy: false
+        RestrictPublicBuckets: false
 
   SubscribeWebsiteBucketPolicy:
     Type: AWS::S3::BucketPolicy
