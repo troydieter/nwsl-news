@@ -252,3 +252,4 @@ $RECYCLE.BIN/
 samconfig.toml
 .aws-sam
 **/**/newsletter_email/dependencies/*
+.idea
