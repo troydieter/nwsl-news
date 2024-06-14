@@ -21,7 +21,7 @@ def main(event, context):
     logging.info(f"subscriptions:{subscriptions}")
 
     feeds = [rssfeed_xml(feed, cutoff_date) for feed in feed_list_xml]
-    feeds += [rssfeed_json(feed, cutoff_date) for feed in feed_list_json]
+    # feeds += [rssfeed_json(feed, cutoff_date) for feed in feed_list_json]
 
     mail_body_part = render_mail(
         feeds=feeds,
@@ -47,7 +47,7 @@ def main(event, context):
                 },
                 Message={
                     'Subject': {
-                        'Data': 'AWS Roadmap Items of Interest',
+                        'Data': 'NWSL.me - Your weekly digest!',
                     },
                     'Body': {
                         'Html': {
