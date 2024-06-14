@@ -24,7 +24,10 @@ class StaticSiteStack(Stack):
         force_email_validation = props["email_validation"]
         site_namespace = props["namespace"]
 
-        route53_zone = self.r53_zone(props)
+        route53_zone = HostedZone.from_hosted_zone_attributes(self, "HostedZone",
+            zone_name=props["domain_name_root"],
+            hosted_zone_id=props["domain_name_id"]
+        )
         cert = self.cert_creation(props, route53_zone, www_domain_name, wildcard_domain_name, force_email_validation)
 
         site_bucket = self.bucket_creation(www_domain_name, enforce_ssl=True, versioned=True)
@@ -140,13 +143,13 @@ class StaticSiteStack(Stack):
                                            ))
         return sec_policy
 
-    def r53_zone(self, props):
-        r53_zone = HostedZone(self, "MainZone",
-                              zone_name=props["domain_name_root"],
-                              comment=props["namespace"]
-                              )
-        r53_zone.apply_removal_policy(RemovalPolicy.RETAIN)
-        return r53_zone
+    # def r53_zone(self, props):
+    #     r53_zone = HostedZone(self, "MainZone",
+    #                           zone_name=props["domain_name_root"],
+    #                           comment=props["namespace"]
+    #                           )
+    #     r53_zone.apply_removal_policy(RemovalPolicy.RETAIN)
+    #     return r53_zone
 
     def cert_creation(self, props, route53_zone, site_domain_name, wildcard_domain_name, force_email_validation):
         if force_email_validation:
