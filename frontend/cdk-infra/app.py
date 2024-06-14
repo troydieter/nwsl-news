@@ -9,7 +9,7 @@ props = {
     "default_root_object": app.node.try_get_context("default_root_object"),
     "domain_name_www": app.node.try_get_context("domain_name_www"),
     "domain_name_root": app.node.try_get_context("domain_name_root"),
-    "domain_id": app.node.try_get_context("domain_name_id"),
+    "domain_name_id": app.node.try_get_context("domain_name_id"),
     "sub_domain_name": app.node.try_get_context("sub_domain_name"),
     "mon_email_address": app.node.try_get_context("mon_email_address"),
     "email_validation": app.node.try_get_context("email_validation"),
