@@ -9,8 +9,8 @@ logger.setLevel(logging.INFO)
 
 with open("rssfeed_xml/feedlist.json", "r") as feed_list_xml_f:
     feed_list_xml = json.load(feed_list_xml_f)
-with open("rssfeed_json/feedlist.json", "r") as feed_list_json_f:
-    feed_list_json = json.load(feed_list_json_f)
+# with open("rssfeed_json/feedlist.json", "r") as feed_list_json_f:
+#     feed_list_json = json.load(feed_list_json_f)
 
 
 def main(event, context):
