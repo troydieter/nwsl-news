@@ -7,7 +7,7 @@ Description: >
 
 Parameters:
   EmailSender:
-    Default: 'noreply@stormfsi.de'
+    Default: 'noreply@nwslmeeeee.me'
     Description: E-Mail Id from which the Mail will be send
     Type: String
   EmailWhitelistPattern:

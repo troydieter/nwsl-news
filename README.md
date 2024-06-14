@@ -1,7 +1,4 @@
-# AWS Newsletter via E-Mail :mailbox:
-
-
-![AWS E-Mail Newsletter Architecture Diagram](./AWSEmailNewsletter.drawio.png)
+![NWSL Weekly Digest Newsletter](./AWSEmailNewsletter.drawio.png)
 
 ## Prerequisites :raising_hand:
 * Active AWS credentials
@@ -23,7 +20,7 @@ sam deploy --parameter-overrides \
 	"MailFrequency=rate(7\ days)" \
 	CutoffDays=7 \
 	OpsEmailid=<YOUR_OPS_EMAIL> \
---guided
+--guided --capabilities CAPABILITY_NAMED_IAM
 ````
 
 See these example values for SAM:
